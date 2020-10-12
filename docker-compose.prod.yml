@@ -26,6 +26,7 @@ services:
       - "5000"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - ./private.key:/usr/src/app/configs/private.key
     networks:
       - executeit
     command: >
@@ -36,8 +37,9 @@ services:
       - DOCKER_SOCKET=/var/run/docker.sock
       - USER_SERVER_URL=rooms.executeit.ml
       - USER_SERVER_IMAGE=docker.pkg.github.com/execute-it/user-image/user-image
-      - USER_SERVER_CPU_LIMIT=10
-      - USER_SERVER_MEM_LIMIT=256000
+      - USER_SERVER_MEM_LIMIT=268435456
+      - USER_SERVER_CPU_PERIOD=100000
+      - USER_SERVER_CPU_QUOTA=50000
       - USER_SERVER_NETWORK=executeit
       - MONGO_HOST=mongo
       - MONGO_DB_NAME=executeit
@@ -116,8 +118,8 @@ services:
     image: docker.pkg.github.com/execute-it/mediasoup-server/mediasoup-server
     environment:
       SERVER_PORT: 8000 # Ensure this is the same in ./traefik.yml file (for reverse proxy)
-      RTC_IP: 128.199.29.204
-      RTC_ANNOUNCED_IP: 128.199.29.204
+      RTC_IP: 167.71.234.145
+      RTC_ANNOUNCED_IP: 167.71.234.145
     network_mode: host
 
 

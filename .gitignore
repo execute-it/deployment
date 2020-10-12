@@ -1,1 +1,4 @@
 .env
+mongo-volume
+ot-volume
+private.key
