@@ -15,14 +15,18 @@ instructions refer: https://docs.docker.com/install/
 Create a .env file as given in .env.example.
 
 Before starting docker-compose, create a docker bridge network
-```bash
+```bash 
 docker network create -d bridge executeit
 ```
--------------- Enter steps here ------------------
+
+Then start traefik 
+```bash
+docker-compose -f docker-compose.prod.yml up -d reverse-proxy
+```
 
 And finally start the server 
 ```bash
-docker-compose -f docker-compose.prod.yml up app
+docker-compose -f docker-compose.prod.yml up 
 ```
 
 ## System Architecture
