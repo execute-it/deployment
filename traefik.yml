@@ -14,7 +14,7 @@ http:
       loadBalancer:
         servers:
           # 172.17.0.1 is IP of the host
-          - url: "http://172.17.0.1:8000"
+          - url: ${HOST_IP}
 
   middlewares:
     # Middlewares for mediasoup (for voice chat)

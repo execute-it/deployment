@@ -118,8 +118,8 @@ services:
     image: docker.pkg.github.com/execute-it/mediasoup-server/mediasoup-server
     environment:
       SERVER_PORT: 8000 # Ensure this is the same in ./traefik.yml file (for reverse proxy)
-      RTC_IP: 167.71.234.145
-      RTC_ANNOUNCED_IP: 167.71.234.145
+      RTC_IP: ${HOST_IP}
+      RTC_ANNOUNCED_IP: ${HOST_IP}
     network_mode: host
 
 
