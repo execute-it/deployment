@@ -1,7 +1,3 @@
-
-### Deployment setup for execute-it
-**Create a .env file as given in .env.example**
-
 # Execute-It Deployment
 
 This repository automatically pull all necessary docker containers and deploys them.
@@ -16,6 +12,7 @@ instructions refer: https://docs.docker.com/install/
 
 ## Deployments
 
+Create a .env file as given in .env.example.
 
 Before starting docker-compose, create a docker bridge network
 ```bash
